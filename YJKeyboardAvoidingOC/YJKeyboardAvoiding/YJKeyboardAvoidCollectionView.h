@@ -1,5 +1,5 @@
 //
-//  YJKeyboardAvoidingScrollView.h
+//  YJKeyboardAvoidCollectionView.h
 //  YJKeyboardAvoidingOC
 //
 //  Created by YJHou on 2016/11/26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YJKeyboardAvoidingScrollView : UIScrollView
+@interface YJKeyboardAvoidCollectionView : UICollectionView
 
 - (BOOL)focusNextTextField;
 - (void)scrollToActiveTextField;

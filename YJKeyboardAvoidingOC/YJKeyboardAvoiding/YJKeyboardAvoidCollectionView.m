@@ -1,19 +1,19 @@
 //
-//  YJKeyboardAvoidingScrollView.m
+//  YJKeyboardAvoidCollectionView.m
 //  YJKeyboardAvoidingOC
 //
 //  Created by YJHou on 2016/11/26.
 //  Copyright © 2016年 YJManager. All rights reserved.
 //
 
-#import "YJKeyboardAvoidingScrollView.h"
+#import "YJKeyboardAvoidCollectionView.h"
 #import "UIScrollView+YJKeyboardAvoidingExt.h"
 
-@interface YJKeyboardAvoidingScrollView () <UITextFieldDelegate, UITextViewDelegate>
+@interface YJKeyboardAvoidCollectionView () <UITextFieldDelegate, UITextViewDelegate>
 
 @end
 
-@implementation YJKeyboardAvoidingScrollView
+@implementation YJKeyboardAvoidCollectionView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -23,19 +23,36 @@
     return self;
 }
 
-- (void)awakeFromNib{
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(nonnull UICollectionViewLayout *)layout{
+    self = [super initWithFrame:frame collectionViewLayout:layout];
+    if (self) {
+        [self _setUpKeyboardAvoidNotificationCenter];
+    }
+    return self;
+}
+
+-(void)awakeFromNib {
     [super awakeFromNib];
     [self _setUpKeyboardAvoidNotificationCenter];
 }
 
-- (void)_setUpKeyboardAvoidNotificationCenter{
+- (void)_setUpKeyboardAvoidNotificationCenter {
+    if ( [self hasAutomaticKeyboardAvoidingBehaviour] ) return;
+    
     NSNotificationCenter * noticationCenter = [NSNotificationCenter defaultCenter];
     
     [noticationCenter addObserver:self selector:@selector(keyboardAvoidingWithKeyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [noticationCenter addObserver:self selector:@selector(keyboardAvoidingWithKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [noticationCenter addObserver:self selector:@selector(scrollToActiveTextField) name:UITextFieldTextDidBeginEditingNotification object:nil];
     [noticationCenter addObserver:self selector:@selector(scrollToActiveTextField) name:UITextViewTextDidBeginEditingNotification object:nil];
+}
 
+-(BOOL)hasAutomaticKeyboardAvoidingBehaviour {
+    if ( [[[UIDevice currentDevice] systemVersion] integerValue] >= 9.0
+        && [self.delegate isKindOfClass:[UICollectionViewController class]] ) {
+        return YES;
+    }
+    return NO;
 }
 
 -(void)setFrame:(CGRect)frame {
@@ -44,25 +61,25 @@
 }
 
 -(void)setContentSize:(CGSize)contentSize {
+    if (CGSizeEqualToSize(contentSize, self.contentSize)) {
+        return;
+    }
     [super setContentSize:contentSize];
-    [self keyboardAvoidingUpdateFromContentSizeChange];
+    [self keyboardAvoidingUpdateContentInset];
 }
 
-- (void)contentSizeToFit {
-    self.contentSize = [self keyboardAvoidingCalculatedContentSizeFromSubviewFrames];
-}
-
-- (BOOL)focusNextTextField{
+- (BOOL)focusNextTextField {
     return [self keyboardAvoidingFocusNextTextField];
     
 }
-- (void)scrollToActiveTextField{
+- (void)scrollToActiveTextField {
     return [self keyboardAvoidingScrollToActiveTextField];
 }
 
--(void)willMoveToSuperview:(UIView *)newSuperview {
+#pragma mark - Responders, events
+- (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
-    if (!newSuperview) {
+    if ( !newSuperview ) {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(keyboardAvoidingAssignTextDelegateForViewsBeneathView:) object:self];
     }
 }
@@ -73,7 +90,7 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (![self focusNextTextField]) {
+    if ( ![self focusNextTextField] ) {
         [textField resignFirstResponder];
     }
     return YES;
