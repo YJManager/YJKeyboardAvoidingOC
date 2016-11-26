@@ -17,6 +17,9 @@
 		63762D411DE9C252008375AB /* YJKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D401DE9C252008375AB /* YJKeyboardAvoidingScrollView.m */; };
 		63762D441DE9DDA0008375AB /* YJKeyboardAvoidTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D431DE9DDA0008375AB /* YJKeyboardAvoidTableView.m */; };
 		63762D471DE9E1FF008375AB /* YJKeyboardAvoidCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D461DE9E1FF008375AB /* YJKeyboardAvoidCollectionView.m */; };
+		63762D4A1DE9E763008375AB /* ScroollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D491DE9E763008375AB /* ScroollViewController.m */; };
+		63762D4D1DE9E78B008375AB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D4C1DE9E78B008375AB /* TableViewController.m */; };
+		63762D501DE9EB15008375AB /* NormalTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D4F1DE9EB15008375AB /* NormalTableViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,12 @@
 		63762D431DE9DDA0008375AB /* YJKeyboardAvoidTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJKeyboardAvoidTableView.m; sourceTree = "<group>"; };
 		63762D451DE9E1FF008375AB /* YJKeyboardAvoidCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJKeyboardAvoidCollectionView.h; sourceTree = "<group>"; };
 		63762D461DE9E1FF008375AB /* YJKeyboardAvoidCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJKeyboardAvoidCollectionView.m; sourceTree = "<group>"; };
+		63762D481DE9E763008375AB /* ScroollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScroollViewController.h; sourceTree = "<group>"; };
+		63762D491DE9E763008375AB /* ScroollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScroollViewController.m; sourceTree = "<group>"; };
+		63762D4B1DE9E78B008375AB /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		63762D4C1DE9E78B008375AB /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		63762D4E1DE9EB15008375AB /* NormalTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewViewController.h; sourceTree = "<group>"; };
+		63762D4F1DE9EB15008375AB /* NormalTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,12 @@
 				63762D281DE9B79F008375AB /* AppDelegate.m */,
 				63762D2A1DE9B79F008375AB /* ViewController.h */,
 				63762D2B1DE9B79F008375AB /* ViewController.m */,
+				63762D481DE9E763008375AB /* ScroollViewController.h */,
+				63762D491DE9E763008375AB /* ScroollViewController.m */,
+				63762D4B1DE9E78B008375AB /* TableViewController.h */,
+				63762D4C1DE9E78B008375AB /* TableViewController.m */,
+				63762D4E1DE9EB15008375AB /* NormalTableViewViewController.h */,
+				63762D4F1DE9EB15008375AB /* NormalTableViewViewController.m */,
 				63762D2D1DE9B79F008375AB /* Main.storyboard */,
 				63762D301DE9B79F008375AB /* Assets.xcassets */,
 				63762D321DE9B79F008375AB /* LaunchScreen.storyboard */,
@@ -180,12 +195,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				63762D3E1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.m in Sources */,
+				63762D501DE9EB15008375AB /* NormalTableViewViewController.m in Sources */,
 				63762D2C1DE9B79F008375AB /* ViewController.m in Sources */,
 				63762D291DE9B79F008375AB /* AppDelegate.m in Sources */,
 				63762D441DE9DDA0008375AB /* YJKeyboardAvoidTableView.m in Sources */,
+				63762D4D1DE9E78B008375AB /* TableViewController.m in Sources */,
 				63762D261DE9B79F008375AB /* main.m in Sources */,
 				63762D471DE9E1FF008375AB /* YJKeyboardAvoidCollectionView.m in Sources */,
 				63762D411DE9C252008375AB /* YJKeyboardAvoidingScrollView.m in Sources */,
+				63762D4A1DE9E763008375AB /* ScroollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

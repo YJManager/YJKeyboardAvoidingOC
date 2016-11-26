@@ -35,7 +35,8 @@ static char const * const kKeyboardStatusKey      =  "kKeyboardStatusKey";
 // 参数
 static NSString *const YJKeyboardAvoidScrollViewClassName = @"YJKeyboardAvoidingScrollView";
 static const CGFloat kCalculatedContentPadding = 10.0f;
-static const CGFloat kMinimumScrollOffsetPadding = 20.0f;
+static const CGFloat kMinimumScrollOffsetPadding = 10.0f;
+static const CGFloat kScalePadding = 0.8; // 可视区域的比例
 
 @implementation UIScrollView (YJKeyboardAvoidingExt)
 
@@ -269,7 +270,7 @@ static const CGFloat kMinimumScrollOffsetPadding = 20.0f;
     CGRect subviewRect = [view convertRect:view.bounds toView:self];
     __block CGFloat padding = 0.0;
     void(^centerViewInViewableArea)()  = ^ {
-        padding = (viewAreaHeight - subviewRect.size.height) * 0.5;
+        padding = (viewAreaHeight - subviewRect.size.height) * kScalePadding;
         
         if (padding < kMinimumScrollOffsetPadding ) {
             padding = kMinimumScrollOffsetPadding;
@@ -282,7 +283,7 @@ static const CGFloat kMinimumScrollOffsetPadding = 20.0f;
         UITextPosition *caretPosition = [textInput selectedTextRange].start;
         if (caretPosition) {
             CGRect caretRect = [self convertRect:[textInput caretRectForPosition:caretPosition] fromView:textInput];
-            padding = (viewAreaHeight - caretRect.size.height) * 0.5;
+            padding = (viewAreaHeight - caretRect.size.height) * kScalePadding;
             
             if (padding < kMinimumScrollOffsetPadding ) {
                 padding = kMinimumScrollOffsetPadding;

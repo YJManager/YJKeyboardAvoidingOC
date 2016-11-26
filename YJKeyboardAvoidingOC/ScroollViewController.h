@@ -1,5 +1,5 @@
 //
-//  YJKeyboardAvoidTableView.h
+//  ScroollViewController.h
 //  YJKeyboardAvoidingOC
 //
 //  Created by YJHou on 2016/11/26.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YJKeyboardAvoidTableView : UITableView 
+@interface ScroollViewController : UIViewController
 
-- (BOOL)focusNextTextField;
-- (void)scrollToActiveTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 
 @end
