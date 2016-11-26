@@ -13,6 +13,8 @@
 		63762D2F1DE9B79F008375AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63762D2D1DE9B79F008375AB /* Main.storyboard */; };
 		63762D311DE9B79F008375AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63762D301DE9B79F008375AB /* Assets.xcassets */; };
 		63762D341DE9B79F008375AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63762D321DE9B79F008375AB /* LaunchScreen.storyboard */; };
+		63762D3E1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D3D1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.m */; };
+		63762D411DE9C252008375AB /* YJKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63762D401DE9C252008375AB /* YJKeyboardAvoidingScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		63762D301DE9B79F008375AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63762D331DE9B79F008375AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63762D351DE9B79F008375AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63762D3C1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YJKeyboardAvoidingExt.h"; sourceTree = "<group>"; };
+		63762D3D1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YJKeyboardAvoidingExt.m"; sourceTree = "<group>"; };
+		63762D3F1DE9C252008375AB /* YJKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		63762D401DE9C252008375AB /* YJKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		63762D231DE9B79F008375AB /* YJKeyboardAvoidingOC */ = {
 			isa = PBXGroup;
 			children = (
+				63762D3B1DE9B96A008375AB /* YJKeyboardAvoiding */,
 				63762D271DE9B79F008375AB /* AppDelegate.h */,
 				63762D281DE9B79F008375AB /* AppDelegate.m */,
 				63762D2A1DE9B79F008375AB /* ViewController.h */,
@@ -77,6 +84,17 @@
 				63762D251DE9B79F008375AB /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63762D3B1DE9B96A008375AB /* YJKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				63762D3C1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.h */,
+				63762D3D1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.m */,
+				63762D3F1DE9C252008375AB /* YJKeyboardAvoidingScrollView.h */,
+				63762D401DE9C252008375AB /* YJKeyboardAvoidingScrollView.m */,
+			);
+			path = YJKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63762D3E1DE9B9CD008375AB /* UIScrollView+YJKeyboardAvoidingExt.m in Sources */,
 				63762D2C1DE9B79F008375AB /* ViewController.m in Sources */,
 				63762D291DE9B79F008375AB /* AppDelegate.m in Sources */,
 				63762D261DE9B79F008375AB /* main.m in Sources */,
+				63762D411DE9C252008375AB /* YJKeyboardAvoidingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
