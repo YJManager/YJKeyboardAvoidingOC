@@ -2,8 +2,8 @@
 //  YJKeyboardAvoidingScrollView.h
 //  YJKeyboardAvoidingOC
 //
-//  Created by YJHou on 2016/11/26.
-//  Copyright © 2016年 YJManager. All rights reserved.
+//  Created by YJHou on 2014/10/26.
+//  Copyright © 2014年 YJManager. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
